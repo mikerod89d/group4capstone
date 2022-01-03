@@ -26,7 +26,7 @@ if(isset($_POST['email']) & isset($_POST['pw'])){
         $login_msg = 'Failed Authentication - Try Again.';
     }
 }
-if(isset($POST['create'])) {
+if(isset($_POST['create'])) {
     header('Location: add_update_user.php');
 }
 ?>
