@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2022 at 08:08 PM
+-- Generation Time: Jan 03, 2022 at 08:21 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -41,20 +41,21 @@ CREATE TABLE `tickets` (
 --
 
 CREATE TABLE `users` (
-  `UserID` int(11) NOT NULL,
+  `UserNo` int(11) NOT NULL,
+  `UserId` varchar(3) NOT NULL,
   `Password` varchar(50) NOT NULL,
   `FirstName` varchar(255) NOT NULL,
   `LastName` varchar(255) NOT NULL,
   `EMail` varchar(255) NOT NULL,
-  `UserLevel` int(11) NOT NULL
+  `UserLevelNo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`UserID`, `Password`, `FirstName`, `LastName`, `EMail`, `UserLevel`) VALUES
-(1, 'password', 'Michael', 'Rodriguez', 'microd0028@students.ecpi.edu', 1);
+INSERT INTO `users` (`UserNo`, `UserId`, `Password`, `FirstName`, `LastName`, `EMail`, `UserLevelNo`) VALUES
+(1, '89D', 'password', 'Michael', 'Rodriguez', 'microd0028@students.ecpi.edu', 1);
 
 -- --------------------------------------------------------
 
@@ -89,7 +90,7 @@ ALTER TABLE `tickets`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`UserID`);
+  ADD PRIMARY KEY (`UserNo`);
 
 --
 -- Indexes for table `user_levels`
@@ -111,7 +112,7 @@ ALTER TABLE `tickets`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `UserNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user_levels`
