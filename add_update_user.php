@@ -59,12 +59,9 @@
             value="<?php echo $user->getLastName(); ?>"><br>
         <input type='text' name='email' required placeholder="E-Mail"
             value="<?php echo $user->getEmail(); ?>"><br>
-        <div class="tooltip">
-            <span class="tooltiptext">1-Administrator  2-User</span>
-            <input type='text' name='level' required placeholder="User Level"
-                value="<?php echo $user->getUserLevel(); ?>">
-            <span name='msg'><?php echo $msg; ?></span>
-        </div>
+        <input type='text' name='level' required placeholder="User Level"
+            value="<?php echo $user->getUserLevel(); ?>">
+        <span name='msg'><?php echo $msg; ?></span>
         <input type="hidden"
             value="<?php echo $user->getUserNo(); ?>" name="userNo"><br><br>
         <input id="save" type="submit" value="Save" name="save"><br><br>
