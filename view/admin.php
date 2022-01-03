@@ -24,7 +24,7 @@ with a table pulled from the database.
 </head>
 <body>
     <h3><?php echo "<span style='color: lime;'>You're logged in as an Administrator</span>" ?></h3>
-    <h1>Administrator Options</h1>
+    <h1>Administrator Portal</h1>
     <form method="POST">
         <input type="submit" value="Manage Tickets" name="tickets">
         <input type="submit" value="Logout" name="logout">
