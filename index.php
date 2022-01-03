@@ -27,7 +27,7 @@ if(isset($_POST['email']) & isset($_POST['pw'])){
     }
 }
 if(isset($POST['create'])) {
-
+    header('Location: add_update_user.php');
 }
 ?>
 
@@ -46,8 +46,7 @@ if(isset($POST['create'])) {
         <input id="email" type="text" name="email" placeholder="Login(e-mail)">
         <input id="pw" type="password" name="pw" placeholder="Password">
         <input id="login" type="submit" value="Login" name="login">
-        <input id="create" type="submit" value="Create User Account" name="create">
-        <input id="create" type="submit" value="Create Admin Account" name="create">
+        <input id="create" type="submit" value="Create Account" name="create">
     </form>
 </body>
 </html>
