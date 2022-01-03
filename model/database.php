@@ -1,9 +1,9 @@
 <?php
 class Database {
-    private $host = '';
-    private $dbname = '';
-    private $username = '';
-    private $password = '';
+    private $host = 'localhost';
+    private $dbname = 'group4capstone';
+    private $username = 'helpDesk_user';
+    private $password = '8d3eTI9mKEqXKgWC';
 
     private $conn;
     private $conn_error = '';
