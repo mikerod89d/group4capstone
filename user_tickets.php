@@ -1,5 +1,13 @@
-<?php 
+<html>
+<head>
+    <title>Group 4 Capstone</title>
+    <link rel="stylesheet" href="view/styles.css" />
+</head>
 
-/*
-This page is where the user is taken when they want to submit a new ticket to the help desk
-*/
+<body>
+<div class='headers'>
+    <h2>Help Desk Portal - User Page</h2>
+    <h3><?php echo "<span style='color: crimson;'>{$login_msg}</span>" ?></h3>
+</div>
+</body>
+</html>
