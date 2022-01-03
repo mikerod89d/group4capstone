@@ -26,6 +26,9 @@ if(isset($_POST['email']) & isset($_POST['pw'])){
         $login_msg = 'Failed Authentication - Try Again.';
     }
 }
+if(isset($POST['create'])) {
+
+}
 ?>
 
 <html>
@@ -43,6 +46,8 @@ if(isset($_POST['email']) & isset($_POST['pw'])){
         <input id="email" type="text" name="email" placeholder="Login(e-mail)">
         <input id="pw" type="password" name="pw" placeholder="Password">
         <input id="login" type="submit" value="Login" name="login">
+        <input id="create" type="submit" value="Create User Account" name="create">
+        <input id="create" type="submit" value="Create Admin Account" name="create">
     </form>
 </body>
 </html>

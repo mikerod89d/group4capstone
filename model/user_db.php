@@ -80,7 +80,7 @@ class UserDB {
             return false;
         }
     }
-// left off!!!!!!!!
+
     public static function addUser($userId,$password,
         $fName,$lName, $eMail, $userLevel) {
             $db = new Database();
@@ -89,7 +89,7 @@ class UserDB {
         if ($dbConn) {
             $query = 
             "INSERT INTO users (UserId, Password,
-                FirstName, LastName, HireDate, EMail, Extension, UserLevelNo)
+                FirstName, LastName, EMail, UserLevelNo)
             VALUES ('$userId','$password','$fName','$lName', 
                 '$eMail','$userLevel')";
                 
