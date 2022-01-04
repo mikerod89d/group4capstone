@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Group 4 Capstone</title>
+    
+</head>
+
+<style type ="text/css">
+    table{
+        border-collapse: collapse;
+        width: 100%;
+        color: rgba(127, 50, 172, 0.74);
+        font-family: fantasy;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    th{
+        background-color: rgba(127, 50, 172, 0.466) ;
+    }
+
+     
+
+
+</style>
+
+<body style="background-color: grey;">
+    <div class='headers'>
+        <h2>Help Desk Portal - Home Page</h2>
+        <h3><Font face="purple"><Font size="7">Ticket Directory</h3> <!--Ticket table title-->
+    </div>
+    
+    <!-- button for log out-->
+        <button type="button">Logout</button>
+
+    <!-- button for new ticket-->    
+        <button type="button">Create New Ticket</button>
+            <table>
+                <tr>
+                    <th>Ticket ID</th>
+                    <th>Status</th>
+                    <th>Customer</th>
+                    <th>Last Viewed</th>
+                    <th>Options</th>
+                        
+                </tr>
+            
+                <!-- my database login info to pull from database-->
+                
+            </table>
+
+            
+        
+    </body>
+</html>
