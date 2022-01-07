@@ -27,6 +27,7 @@ it will give them the option to open the ticket if the help desk has responded. 
     <form method="POST">
         <input type="submit" value="New Ticket" name="userTickets">
         <input type="submit" value="Logout" name="logout">
+        <input type="submit" value="Update Account Information" name="update">
     </form>
 </body>
 </html>
