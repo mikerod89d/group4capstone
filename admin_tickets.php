@@ -8,7 +8,7 @@ $dir = getcwd() . "/tickets/";
 $viewFile = '';
 $editFile = '';
 
-Security::checkAuthority('user');
+Security::checkAuthority('admin');
 
 if(isset($_POST['logout'])) {
     unset($_SESSION);
@@ -19,7 +19,7 @@ if(isset($_POST['logout'])) {
 }
 
 if(isset($_POST['home'])) {
-    header("Location: view/user.php");
+    header("Location: view/admin.php");
 }
 
 if(isset($_POST['view'])) {
@@ -49,6 +49,11 @@ if(isset($_POST['create'])) {
     $editFile = '';
     $viewFile = '';
 }
+if(isset($_POST['delete'])) {
+    $fName = $_POST['fileToDelete'];
+    unlink($dir . $fName);
+}
+
 ?>
 
 <html>
@@ -64,6 +69,12 @@ if(isset($_POST['create'])) {
             <li><?php echo $file ?></li>
         <?php endforeach; ?>
     </ul>
+    <input id="delete" type="submit" value="Delete File" name="delete">
+            <select name="fileToDelete">
+            <?php foreach(FileUtilities::GetFileList($dir) as $file) : ?>
+                <option value="<?php echo $file; ?>"><?php echo $file; ?>
+                </option>
+            <?php endforeach; ?></select>
         <br>
         <br>
         <textarea id="editFile" name="editFile" rows="5" cols="70">
