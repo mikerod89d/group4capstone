@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once('./controller/user.php');
     require_once('./controller/user_controller.php');
     require_once('./controller/level.php');
@@ -65,7 +66,7 @@
         <input type="hidden"
             value="<?php echo $user->getUserNo(); ?>" name="userNo"><br><br>
         <input id="save" type="submit" value="Save" name="save"><br><br>
-        <input id="cancel" type="submit" value="Cancel" name="cancel">
+        <input id="cancel" type="submit" value="Cancel" name="cancel" formnovalidate>
     </form>
 </body>
 </html>

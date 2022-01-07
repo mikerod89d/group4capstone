@@ -11,9 +11,10 @@ if(isset($_POST['logout'])) {
 if(isset($_POST['userTickets'])) {
     header("Location: ../user_tickets.php");
 }
-/* This page will also populate a table that lists open and closed tickets that the user has, and 
-it will give them the option to open the ticket if the help desk has responded. This is just the shell for the user page.
-*/
+if (isset($_POST['update'])){
+        header('Location: ../add_update_user.php');
+    }
+
 ?>
 
 <html>

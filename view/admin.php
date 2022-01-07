@@ -11,10 +11,10 @@ if(isset($_POST['logout'])) {
 if(isset($_POST['tickets'])) {
     header("Location: ../admin_tickets.php");
 }
-/*
-This page is for the "help desk" to view tickets and respond to user tickets. The page will be auto populated 
-with a table pulled from the database.
-*/
+if(isset($_POST['users'])) {
+    header("Location: ../admin_users.php");
+}
+
 ?>
 
 <html>
@@ -26,6 +26,7 @@ with a table pulled from the database.
     <h3><?php echo "<span style='color: lime;'>You're logged in as an Administrator</span>" ?></h3>
     <h1>Administrator Portal</h1>
     <form method="POST">
+        <input type="submit" value="Manage Users" name="users">
         <input type="submit" value="Manage Tickets" name="tickets">
         <input type="submit" value="Logout" name="logout">
     </form>

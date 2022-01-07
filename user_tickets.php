@@ -64,20 +64,15 @@ if(isset($_POST['create'])) {
             <li><?php echo $file ?></li>
         <?php endforeach; ?>
     </ul>
-        <input id="load" type="submit" value="Load/Edit Ticket" name="load">
-            <select name="fileToUpdate">
-            <?php foreach(FileUtilities::GetFileList($dir) as $file) : ?>
-                <option value="<?php echo $file; ?>"><?php echo $file; ?>
-                </option>
-            <?php endforeach; ?></select>
         <br>
         <br>
         <textarea id="editFile" name="editFile" rows="5" cols="70">
             <?php echo $editFile ?></textarea>
         <br>
         <br>
-        <input id="view" type="submit" value="View Ticket" name="view">
-            <select name="fileToView">
+        <input id="save" type="submit" value="Save" name="save">
+        <input id="load" type="submit" value="Load/Edit Ticket" name="load">
+            <select name="fileToUpdate">
             <?php foreach(FileUtilities::GetFileList($dir) as $file) : ?>
                 <option value="<?php echo $file; ?>"><?php echo $file; ?>
                 </option>
@@ -88,14 +83,21 @@ if(isset($_POST['create'])) {
                 disabled placeholder="Ticket View Panel"><?php echo $viewFile ?></textarea>
         <br>
         <br>
-            <input id="create" type="submit" value="Create" name="create">
-            <input id="text_area" type="text" name="newFileName" placeholder="Save Ticket As...">
+            <input id="view" type="submit" value="View Ticket" name="view">
+            <select name="fileToView">
+            <?php foreach(FileUtilities::GetFileList($dir) as $file) : ?>
+                <option value="<?php echo $file; ?>"><?php echo $file; ?>
+                </option>
+            <?php endforeach; ?></select>
         <br>
         <br>
             <textarea id="createFile" name="createFile" rows="5" cols="70" placeholder="Create Ticket Window"></textarea>
         <br>
         <br>
-            <input id="save" type="submit" value="Save" name="save">
+            <input id="create" type="submit" value="Create" name="create">
+            <input id="text_area" type="text" name="newFileName" placeholder="Save Ticket As...">
+        <br>
+        <br>
             <input id="home" type="submit" value="Home" name="home">
     </form>
 </body>

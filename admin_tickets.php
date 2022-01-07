@@ -1,11 +1,14 @@
 <?php
 session_start();
-require_once('./controller/user_controller.php');
-require_once('./controller/user.php');
 require_once('./utilities/security.php');
+require_once('./controller/user_controller.php');
+require_once('./utilities/ticket_utilities.php');
 
-Security::checkAuthority('admin');
+$dir = getcwd() . "/tickets/";
+$viewFile = '';
+$editFile = '';
 
+Security::checkAuthority('user');
 
 if(isset($_POST['logout'])) {
     unset($_SESSION);
@@ -16,89 +19,86 @@ if(isset($_POST['logout'])) {
 }
 
 if(isset($_POST['home'])) {
-    header("Location: view/admin.php");
+    header("Location: view/user.php");
 }
 
-if(isset($_POST['add'])) {
-    header("Location: add_update_user.php");
+if(isset($_POST['view'])) {
+    $fName = $_POST['fileToView'];
+    $viewFile = FileUtilities::GetFileContents($dir . $fName);
+    $editFile = '';
 }
 
-if (isset($_POST['update'])){
-    if(isset($_POST['userUpdate'])){
-        header('Location: ./add_update_user.php?userNo=' . $_POST['userUpdate']);
-    }
-    unset($_POST['update']);
-    unset($_POST['userUpdate']);
+if(isset($_POST['load'])) {
+    $fName = $_POST['fileToUpdate'];
+    $editFile = FileUtilities::GetFileContents($dir . $fName);
+    $viewFile = '';
 }
 
-if (isset($_POST['delete'])){
-    if(isset($_POST['userDelete'])){
-        UserController::deleteUser($_POST['userDelete']);
-    }
-    unset($_POST['delete']);
-    unset($_POST['userDelete']);
+if(isset($_POST['save'])) {
+    $fName = $_POST['fileToUpdate'];
+    $content = $_POST['editFile'];
+    FileUtilities::WriteFile($dir . $fName, $content);
+    $editFile = '';
+    $viewFile = '';
 }
 
+if(isset($_POST['create'])) {
+    $fName = $_POST['newFileName'];
+    $content = $_POST['createFile'];
+    FileUtilities::WriteFile($dir . $fName, $content);
+    $editFile = '';
+    $viewFile = '';
+}
 ?>
 
 <html>
 <head>
-    <title>
-        Group 4 Capstone
-    </title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Ticket Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <h1>User Accounts</h1>
-    <table>
-        <tr>
-            <th>User No</th>
-            <th>User ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>E-Mail</th>
-            <th>User Level</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-        </tr>
-    <?php foreach(UserController::getAllUsers() as $user) : ?>
-        <tr>
-            <td><?php echo $user->getUserNo(); ?></td>
-            <td><?php echo $user->getUserId(); ?></td>
-            <td><?php echo $user->getFirstName(); ?></td>
-            <td><?php echo $user->getLastName(); ?></td>
-            <td><?php echo $user->getEMail(); ?></td>
-            <td><?php echo $user->getUserLevel(); ?></td>
-            <td><form method="POST">
-                <input type="hidden" name="userUpdate"
-                    value="<?php echo $user->getUserNo(); ?>" />
-                <input type="submit" value="Update" name="update" />
-            </form></td>
-            <td><form method="POST">
-                <input type="hidden" name="userDelete"
-                    value="<?php echo $user->getUserNo(); ?>" />
-                <input type="submit" value="Delete" name="delete" />
-            </form></td>
-            <td><form method="POST">
-                <input type="hidden" name="replyTicket"
-                    value="<?php echo $user->getTicketNo(); ?>" />
-                <input type="submit" value="Reply" name="reply" />
-            </form></td>
-            <td><form method="POST">
-                <input type="hidden" name="closeTicket"
-                    value="<?php echo $user->getTicketNo(); ?>" />
-                <input type="submit" value="Close" name="close" />
-            </form></td>
-        </tr>
-    <?php endforeach; ?>
-    </table>
-    <br>
-    <form method="POST">
-        <input type="submit" value="Add User" name="add">
-        <input type="submit" value="Home" name="home">
-        <input type="submit" value="Logout" name="logout">
+    <h3>Tickets Available:</h3>
+    <form method='POST'>
+    <ul>
+        <?php foreach(FileUtilities::GetFileList($dir) as $file) : ?>
+            <li><?php echo $file ?></li>
+        <?php endforeach; ?>
+    </ul>
+        <br>
+        <br>
+        <textarea id="editFile" name="editFile" rows="5" cols="70">
+            <?php echo $editFile ?></textarea>
+        <br>
+        <br>
+        <input id="save" type="submit" value="Save" name="save">
+        <input id="load" type="submit" value="Load/Edit Ticket" name="load">
+            <select name="fileToUpdate">
+            <?php foreach(FileUtilities::GetFileList($dir) as $file) : ?>
+                <option value="<?php echo $file; ?>"><?php echo $file; ?>
+                </option>
+            <?php endforeach; ?></select>
+        <br>
+        <br>
+            <textarea id="viewFile" name="viewFile" rows="5" cols="70"
+                disabled placeholder="Ticket View Panel"><?php echo $viewFile ?></textarea>
+        <br>
+        <br>
+            <input id="view" type="submit" value="View Ticket" name="view">
+            <select name="fileToView">
+            <?php foreach(FileUtilities::GetFileList($dir) as $file) : ?>
+                <option value="<?php echo $file; ?>"><?php echo $file; ?>
+                </option>
+            <?php endforeach; ?></select>
+        <br>
+        <br>
+            <textarea id="createFile" name="createFile" rows="5" cols="70" placeholder="Create Ticket Window"></textarea>
+        <br>
+        <br>
+            <input id="create" type="submit" value="Create" name="create">
+            <input id="text_area" type="text" name="newFileName" placeholder="Save Ticket As...">
+        <br>
+        <br>
+            <input id="home" type="submit" value="Home" name="home">
     </form>
 </body>
-</head>
 </html>
