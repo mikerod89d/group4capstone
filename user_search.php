@@ -46,7 +46,7 @@ $eMail = '';
     <title>
         Group 4 Capstone
     </title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="view/styles.css" />
 <body>
     <h1>User Accounts</h1>
     <table>

@@ -42,11 +42,16 @@ if(isset($_POST['create'])) {
     <h2>Help Desk Portal - Home Page</h2>
     <h3><?php echo "<span style='color: crimson;'>{$login_msg}</span>" ?></h3>
 </div>
+<div class='form'>
     <form method="POST" >
         <input id="email" type="text" name="email" placeholder="Login(e-mail)">
         <input id="pw" type="password" name="pw" placeholder="Password">
         <input id="login" type="submit" value="Login" name="login">
+        <br><br>
+        <h2>Don't Have an Account?</h2>
         <input id="create" type="submit" value="Create Account" name="create">
     </form>
+</div>
+
 </body>
 </html>

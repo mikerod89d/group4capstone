@@ -44,6 +44,7 @@
 <html>
 <head>
     <title>Group 4 Capstone</title>
+    <link rel="stylesheet" href="view/styles.css" />
 </head>
 
 <body>

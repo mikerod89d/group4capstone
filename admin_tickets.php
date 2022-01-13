@@ -59,7 +59,7 @@ if(isset($_POST['delete'])) {
 <html>
 <head>
     <title>Ticket Portal</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="view/styles.css" />
 </head>
 <body>
     <h3>Tickets Available:</h3>
