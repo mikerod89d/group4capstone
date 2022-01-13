@@ -73,6 +73,18 @@ class UserController {
         }
     }
 
+    public static function getUserByEmail($eMail) {
+        $queryRes = UserDB::getUserByEmail($eMail);
+
+        if ($queryRes) {
+            return self::rowToUser($queryRes);
+        }
+        else {
+            return false;
+        }
+    }
+
+
     public static function deleteUser($userNo) {
         return UserDB::deleteUser($userNo);
     }
