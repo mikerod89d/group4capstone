@@ -48,10 +48,12 @@
 </head>
 
 <body>
+    <div class='headers'>
+    <br><br>    
     <h1>Add / Update User</h1>
-
+    </div><br>
     <form method='POST'>
-        <input type='text' name='userId' required placeholder="User ID"
+        <input type='text' name='userId' required placeholder="User ID (3-digits)"
             value="<?php echo $user->getUserId(); ?>"><br>
         <input type='text' name='password' required placeholder="Password"
             value="<?php echo $user->getPassword(); ?>"><br>
@@ -61,7 +63,7 @@
             value="<?php echo $user->getLastName(); ?>"><br>
         <input type='text' name='email' required placeholder="E-Mail"
             value="<?php echo $user->getEmail(); ?>"><br>
-        <input type='text' name='level' required placeholder="User Level"
+        <input type='text' name='level' required placeholder="Level (1-admin : 2-user)"
             value="<?php echo $user->getUserLevel(); ?>">
         <span name='msg'><?php echo $msg; ?></span>
         <input type="hidden"

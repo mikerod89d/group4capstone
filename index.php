@@ -26,7 +26,7 @@ if(isset($_POST['email']) & isset($_POST['pw'])){
         $login_msg = 'Failed Authentication - Try Again.';
     }
 }
-if(isset($_POST['create'])) {
+if(isset($_POST['register'])) {
     header('Location: add_update_user.php');
 }
 ?>
@@ -39,9 +39,11 @@ if(isset($_POST['create'])) {
 
 <body>
 <div class='headers'>
-    <h2>Help Desk Portal - Home Page</h2>
     <h3><?php echo "<span style='color: crimson;'>{$login_msg}</span>" ?></h3>
+    <br><br> 
+    <h2>HELP DESK</h2>
 </div>
+<br>
 <div class='form'>
     <form method="POST" >
         <input id="email" type="text" name="email" placeholder="Login(e-mail)">
@@ -49,7 +51,7 @@ if(isset($_POST['create'])) {
         <input id="login" type="submit" value="Login" name="login">
         <br><br>
         <h2>Don't Have an Account?</h2>
-        <input id="create" type="submit" value="Create Account" name="create">
+        <input id="register" type="submit" value="Create Account" name="register">
     </form>
 </div>
 

@@ -4,6 +4,17 @@ html {
     background-size: cover;
 }
 
+.headers {
+    background-image: url(banner-blue-background.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 100%;
+    height: 150px;
+    border-radius: 20px;
+    border-style: outset;
+    border-color: rgb(9, 192, 18);
+    border-width: 5px;
+}
 input {
     background-color: rgb(70, 70, 70);
     border: 2px;
@@ -44,6 +55,9 @@ h1, h2, h3, h4 {
     width: 290px;
 }
 
+#register {
+    width:100%
+}
 ul {
     list-style: none;
     display: block;

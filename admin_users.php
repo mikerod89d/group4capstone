@@ -48,7 +48,10 @@ if (isset($_POST['delete'])){
     </title>
     <link rel="stylesheet" href="view/styles.css" />
 <body>
+    <div class='headers'>
+    <br><br>
     <h1>User Accounts</h1>
+    </div><br>
     <table>
         <tr>
             <th>User No</th>

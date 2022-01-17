@@ -23,8 +23,10 @@ if (isset($_POST['update'])){
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <div class='headers'>
     <h3><?php echo "<span style='color: lime;'>You're logged in as a User</span>" ?></h3>
     <h1>User Portal</h1>
+    </div><br>
     <form method="POST">
         <input type="submit" value="New Ticket" name="userTickets">
         <input type="submit" value="Logout" name="logout">

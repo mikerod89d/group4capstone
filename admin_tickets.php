@@ -62,7 +62,9 @@ if(isset($_POST['delete'])) {
     <link rel="stylesheet" href="view/styles.css" />
 </head>
 <body>
-    <h3>Tickets Available:</h3>
+    <div class='headers'><br><br>
+    <h1>Tickets Available</h1>
+    </div><br>
     <form method='POST'>
     <ul>
         <?php foreach(FileUtilities::GetFileList($dir) as $file) : ?>

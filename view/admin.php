@@ -29,8 +29,10 @@ if(isset($_POST['search'])) {
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <div class='headers'>
     <h3><?php echo "<span style='color: lime;'>You're logged in as an Administrator</span>" ?></h3>
     <h1>Administrator Portal</h1>
+</div><br>
     <form method="POST">
         <input type="submit" value="Find User" name="search">
         <input type="text" name="eMail" placeholder="User Email Address">
