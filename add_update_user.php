@@ -16,7 +16,7 @@
         $pageTitle = "Update an Existing User";
     }
 
-    if (isset($_POST['save'])) {
+    if (isset($_POST['saveUser'])) {
         $user = new User(
             $_POST['userId'], 
             $_POST['password'],
@@ -68,8 +68,8 @@
         <span name='msg'><?php echo $msg; ?></span>
         <input type="hidden"
             value="<?php echo $user->getUserNo(); ?>" name="userNo"><br><br>
-        <input id="save" type="submit" value="Save" name="save"><br><br>
-        <input id="cancel" type="submit" value="Cancel" name="cancel" formnovalidate>
+        <input id="saveUser" type="submit" value="Save" name="saveUser"><br>
+        <input id="cancel" type="submit" value="Home" name="cancel" formnovalidate>
     </form>
 </body>
 </html>

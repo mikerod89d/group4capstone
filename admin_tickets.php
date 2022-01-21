@@ -71,17 +71,18 @@ if(isset($_POST['delete'])) {
             <li><?php echo $file ?></li>
         <?php endforeach; ?>
     </ul>
+    <div class="deleteDiv">
     <input id="delete" type="submit" value="Delete File" name="delete">
             <select name="fileToDelete">
             <?php foreach(FileUtilities::GetFileList($dir) as $file) : ?>
                 <option value="<?php echo $file; ?>"><?php echo $file; ?>
                 </option>
             <?php endforeach; ?></select>
+            </div>
         <br>
-        <br>
+        <div class="editDiv">
         <textarea id="editFile" name="editFile" rows="5" cols="70">
             <?php echo $editFile ?></textarea>
-        <br>
         <br>
         <input id="save" type="submit" value="Save" name="save">
         <input id="load" type="submit" value="Load/Edit Ticket" name="load">
@@ -90,11 +91,11 @@ if(isset($_POST['delete'])) {
                 <option value="<?php echo $file; ?>"><?php echo $file; ?>
                 </option>
             <?php endforeach; ?></select>
+            </div>
         <br>
-        <br>
+        <div class="viewDiv">
             <textarea id="viewFile" name="viewFile" rows="5" cols="70"
                 disabled placeholder="Ticket View Panel"><?php echo $viewFile ?></textarea>
-        <br>
         <br>
             <input id="view" type="submit" value="View Ticket" name="view">
             <select name="fileToView">
@@ -102,15 +103,15 @@ if(isset($_POST['delete'])) {
                 <option value="<?php echo $file; ?>"><?php echo $file; ?>
                 </option>
             <?php endforeach; ?></select>
+            </div>
         <br>
-        <br>
+        <div class="createDiv">
             <textarea id="createFile" name="createFile" rows="5" cols="70" placeholder="Create Ticket Window"></textarea>
-        <br>
         <br>
             <input id="create" type="submit" value="Create" name="create">
             <input id="text_area" type="text" name="newFileName" placeholder="Save Ticket As...">
         <br>
-        <br>
+        </div>
             <input id="home" type="submit" value="Home" name="home">
     </form>
 </body>

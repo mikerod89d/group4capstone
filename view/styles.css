@@ -17,7 +17,8 @@ html {
 }
 input {
     background-color: rgb(70, 70, 70);
-    border: 2px;
+    border: 3px;
+    border-color: cornsilk;
     border-radius: 20px;
     margin-left: 10px;
     margin-right: auto;
@@ -35,6 +36,7 @@ select {
     border-radius: 20px;
     margin-left: 10px;
     margin-right: auto;
+    width: 48%;
 }
 
 form {
@@ -49,14 +51,43 @@ h1, h2, h3, h4 {
     display: block;
 }
 
-#save, #create, #load, #view, #delete, #home, #cancel, select {
+#create, #view, #delete, select {
+    margin-left: auto;
+    margin-right: auto;
+    width: 48%;
+}
+
+#cancel, #saveUser {
+    margin-left: 10px;
+    margin-right: auto;
+    width: 95%;
+    border-color: cornsilk;
+
+}
+#save, #load {
     margin-left: auto;
     margin-right: 10px;
-    width: 290px;
+    width: 20%;
+}
+
+#home {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.createDiv, .viewDiv, .editDiv, .deleteDiv {
+    background-image: url('blueDIV.jpg');
+    background-size: cover;
+    border-radius: 20px;
+    border-style: outset;
+    border-width: 5px;
+    border-color: cornsilk;
 }
 
 #register {
-    width:100%
+    width:100%;
 }
 ul {
     list-style: none;
@@ -67,22 +98,26 @@ ul {
     margin-left: auto;
     margin-right: auto;
     background-color: black;
+    border-style: inset;
+    border-width: 5px;
+    border-color: blanchedalmond;
     color: white;
     border-radius: 20px;
     padding: 10px;
     resize: none;
-    width: 290px;
+    width: 48%;
 }
 
 #viewFile, #createFile, #editFile {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
     background-color: black;
     color: white;
     border-radius: 20px;
     padding: 10px;
     resize: none;
-    width: 590px;
+    width: 100%;
 }
 
 img {
